@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { githubApi } from '../services/githubApi';
+import { GithubService } from '../services/GithubService';
 import { GitHubUser } from '../types/github';
 
 export const useSearchUsers = () => {
@@ -10,7 +10,7 @@ export const useSearchUsers = () => {
 
   const { data, isLoading } = useQuery({
     queryKey: ['searchUsers', searchQuery, currentPage],
-    queryFn: () => githubApi.searchUsers(searchQuery, currentPage),
+    queryFn: () => GithubService.searchUsers(searchQuery, currentPage),
     enabled: searchQuery.length > 0,
   });
 

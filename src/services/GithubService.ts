@@ -2,7 +2,7 @@ import axios from 'axios';
 import { GITHUB_API_BASE_URL, GITHUB_USER_PER_PAGE } from '../constants';
 import { GitHubUser, SearchResponse } from '../types/github';
 
-export const githubApi = {
+export const GithubService = {
   searchUsers: async (query: string, page: number = 1): Promise<SearchResponse> => {
     const response = await axios.get(`${GITHUB_API_BASE_URL}/search/users`, {
       params: {
@@ -24,4 +24,4 @@ export const githubApi = {
     const response = await axios.get(`${GITHUB_API_BASE_URL}/users/${username}`);
     return response.data;
   },
-}; 
+};

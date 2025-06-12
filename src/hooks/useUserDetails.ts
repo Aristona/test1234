@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { githubApi } from '../services/githubApi';
+import { GithubService } from '../services/GithubService';
 
 export const useUserDetails = () => {
   const { username } = useParams<{ username: string }>();
 
   const { data: user, isLoading } = useQuery({
     queryKey: ['userDetails', username],
-    queryFn: () => githubApi.getUserDetails(username!),
+    queryFn: () => GithubService.getUserDetails(username!),
     enabled: !!username,
   });
 

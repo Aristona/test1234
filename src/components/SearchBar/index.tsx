@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import debounce from 'lodash/debounce';
 
 import type { SearchBarProps } from './types';
@@ -12,7 +12,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch, defaultQuery = '
     setQuery(defaultQuery);
   }, [defaultQuery]);
 
-  const debouncedSearch = React.useCallback(debounce((searchQuery: string) => {
+  const debouncedSearch = useCallback(debounce((searchQuery: string) => {
     onSearch(searchQuery);
   }, 500), [onSearch]);
 
