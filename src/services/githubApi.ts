@@ -15,7 +15,6 @@ export const githubApi = {
     const items = response?.data?.items || [];
 
     return {
-      total_count: response?.data?.total_count || 0,
       items,
     };
   },

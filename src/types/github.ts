@@ -15,7 +15,6 @@ export interface GitHubUser {
 }
 
 export interface SearchResponse {
-  total_count: number;
   items: GitHubUser[];
 }
 
