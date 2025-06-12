@@ -1,0 +1,168 @@
+@import '../../styles/themes.scss';
+
+.com-UserDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  position: relative;
+
+  .back-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: map-get($theme-light, 'text');
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: map-get($theme-dark, 'text');
+    }
+  }
+
+  .user-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 2rem;
+
+    .user-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 10px;
+
+      .user-username {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 0;
+        line-height: 1.6rem;
+        color: map-get($theme-light, 'text');
+
+        @media (prefers-color-scheme: dark) {
+          color: map-get($theme-dark, 'text');
+        }
+      }
+
+      .user-bio {
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 0;
+        line-height: 1.2rem;
+        color: map-get($theme-light, 'text');
+
+        @media (prefers-color-scheme: dark) {
+          color: map-get($theme-dark, 'text');
+        }
+      }
+
+      a {
+        font-size: 1rem;
+        font-weight: 400;
+        text-decoration: underline;
+        color: map-get($theme-light, 'text');
+
+        @media (prefers-color-scheme: dark) {
+          color: map-get($theme-dark, 'text');
+        }
+      }
+    }
+  }
+
+  .user-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 10px;
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 6px;
+
+      .stat-value {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: map-get($theme-light, 'text');
+
+        @media (prefers-color-scheme: dark) {
+          color: map-get($theme-dark, 'text');
+        }
+      }
+
+      .stat-label {
+        font-size: 1rem;
+        font-weight: 400;
+        color: map-get($theme-light, 'text');
+
+        @media (prefers-color-scheme: dark) {
+          color: map-get($theme-dark, 'text');
+        }
+      }
+    }
+  }
+
+  .external-link {
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: underline;
+    color: map-get($theme-light, 'text');
+
+    @media (prefers-color-scheme: dark) {
+      color: map-get($theme-dark, 'text');
+    }
+  }
+
+  .user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+
+    .detail-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 5px;
+
+      strong {
+        font-size: 1rem;
+        font-weight: 600;
+        color: map-get($theme-light, 'text');
+
+        @media (prefers-color-scheme: dark) {
+          color: map-get($theme-dark, 'text');
+        }
+      }
+    }
+  }
+}

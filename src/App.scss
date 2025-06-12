@@ -1,0 +1,22 @@
+@import './styles/themes.scss';
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: map-get($theme-light, 'text');
+  background-color: map-get($theme-light, 'bg');
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  .app-container {
+    color: map-get($theme-dark, 'text');
+    background-color: map-get($theme-dark, 'bg');
+  }
+}

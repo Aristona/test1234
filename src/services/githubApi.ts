@@ -1,0 +1,27 @@
+import axios from 'axios';
+import { GITHUB_API_BASE_URL } from '../constants';
+import { GitHubUser, SearchResponse } from '../types/github';
+
+export const githubApi = {
+  searchUsers: async (query: string, page: number = 1): Promise<SearchResponse> => {
+    const response = await axios.get(`${GITHUB_API_BASE_URL}/search/users`, {
+      params: {
+        q: query,
+        page,
+        per_page: 12,
+      },
+    });
+
+    const items = response?.data?.items || [];
+
+    return {
+      total_count: response?.data?.total_count || 0,
+      items,
+    };
+  },
+
+  getUserDetails: async (username: string): Promise<GitHubUser> => {
+    const response = await axios.get(`${GITHUB_API_BASE_URL}/users/${username}`);
+    return response.data;
+  },
+}; 
