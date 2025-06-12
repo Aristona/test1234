@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GITHUB_API_BASE_URL } from '../constants';
+import { GITHUB_API_BASE_URL, GITHUB_USER_PER_PAGE } from '../constants';
 import { GitHubUser, SearchResponse } from '../types/github';
 
 export const githubApi = {
@@ -8,7 +8,7 @@ export const githubApi = {
       params: {
         q: query,
         page,
-        per_page: 12,
+        per_page: GITHUB_USER_PER_PAGE,
       },
     });
 
