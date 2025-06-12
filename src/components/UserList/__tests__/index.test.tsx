@@ -12,4 +12,4 @@ describe('UserList', () => {
     render(<UserList users={[]} isLoading={false} />);
     expect(screen.getByText('No users found')).toBeInTheDocument();
   });
-}); 
+});

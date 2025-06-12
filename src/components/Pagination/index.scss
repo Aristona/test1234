@@ -1,0 +1,21 @@
+@import '../../styles/themes.scss';
+
+.com-Pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  span.pagination-info {
+    color: map-get($theme-light, 'text');
+    font-size: 1rem;
+
+    @media (prefers-color-scheme: dark) {
+      color: map-get($theme-dark, 'text');
+    }
+  }
+}

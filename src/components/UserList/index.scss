@@ -10,6 +10,9 @@
   overflow: auto;
   box-sizing: border-box;
 
+  scrollbar-color: map-get($theme-light, 'scrollbar');
+  scrollbar-width: thin;
+
   @include isSmallDevice {
     grid-template-columns: 1fr;
   }

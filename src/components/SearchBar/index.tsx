@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import debounce from 'lodash/debounce';
 
 import type { SearchBarProps } from './types';
 
 import './index.scss';
 
-export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
-  const [query, setQuery] = useState('');
+export const SearchBar: React.FC<SearchBarProps> = ({ onSearch, defaultQuery = '' }) => {
+  const [query, setQuery] = useState(defaultQuery);
+
+  useEffect(() => {
+    setQuery(defaultQuery);
+  }, [defaultQuery]);
 
   const debouncedSearch = React.useCallback(debounce((searchQuery: string) => {
     onSearch(searchQuery);
-  }, 500), []);
+  }, 500), [onSearch]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newQuery = e?.target?.value || '';

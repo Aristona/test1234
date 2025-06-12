@@ -16,6 +16,7 @@ export interface GitHubUser {
 
 export interface SearchResponse {
   items: GitHubUser[];
+  total_count: number;
 }
 
 export interface ApiError {

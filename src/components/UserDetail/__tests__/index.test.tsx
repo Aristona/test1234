@@ -1,24 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 import { UserDetail } from '../index';
 import { GitHubUser } from '../../../types/github';
 
-const mockUser: GitHubUser = {
-  id: 1,
-  login: 'testuser',
-  avatar_url: 'https://example.com/avatar.jpg',
-  html_url: 'https://github.com/testuser',
-  name: 'Test User',
-  bio: 'Test bio',
-  public_repos: 10,
-  followers: 100,
-  following: 50,
-  location: 'Test Location',
-  blog: 'https://testblog.com',
-  twitter_username: 'testuser',
-  company: 'Test Company',
-};
+import { mockUser } from '../../../mocks';
 
 describe('UserDetail', () => {
   it('renders loading state', () => {
@@ -70,4 +56,4 @@ describe('UserDetail', () => {
     expect(screen.queryByText('Blog:')).not.toBeInTheDocument();
     expect(screen.queryByText('Twitter:')).not.toBeInTheDocument();
   });
-}); 
+});
